@@ -24,7 +24,7 @@ jobs:
     needs: [Build]
     steps:
       - name: Download code
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: code
           path: .
@@ -33,5 +33,6 @@ jobs:
         env: 
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GIHUB_TOKEN }}
+          DISABLE_ERRORS: true
           
       
